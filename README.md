@@ -1,101 +1,62 @@
-Kirby macOS System Info
+# Kirby macOS System Info
 
-A lightweight, Kirby-inspired system information CLI for macOS, built using Bash.
+A lightweight, customizable system information CLI for macOS, written in Bash.
 
-Features a custom Kirby ASCII design, pastel pink-and-white styling, real-time system information, and a classic rainbow terminal color palette.
+Inspired by Kirby, this project features custom Unicode artwork, a pastel pink-and-white color scheme, and a minimal terminal interface.
 
-Preview
+## Preview
 
+![Terminal Preview](screenshot.png)
 
+## Features
 
-Features
+- Custom Kirby ASCII artwork
+- Pastel pink-and-white terminal styling
+- Automatic macOS hardware detection
+- CPU and GPU information
+- Operating system, kernel, and shell details
+- System uptime
+- Memory and disk usage with progress bars
+- Classic terminal color palette
 
-  Custom white Kirby ASCII art
+## Installation
 
-  Pastel pink system information labels
+Clone the repository:
 
-  Automatic macOS hardware detection
-
- CPU, GPU, OS, kernel, and shell information
-
-  System uptime
-
-  Memory and disk usage with progress bars
-
-  Two-row rainbow terminal color palette
-
-  Lightweight Bash implementation
-
-Requirements
-
-macOS
-
-Bash
-
-A terminal supporting ANSI colors and Unicode characters
-
-No additional software dependencies are required beyond standard macOS command-line utilities.
-
-Installation
-
-1. Clone the repository
-
+```bash
 git clone https://github.com/YOUR_USERNAME/kirby-macos-system-info.git
+```
 
-2. Navigate into the project
+Navigate to the project directory:
 
+```bash
 cd kirby-macos-system-info
+```
 
-3. Run the script
+Run the script:
 
+```bash
 bash system-info.sh
+```
 
-The script automatically retrieves system information from the Mac on which it is executed.
+## Customization
 
-Customization
+Colors, artwork, and progress bars can be modified directly in `system-info.sh`.
 
-The appearance can be customized directly in system-info.sh.
+The default accent color is Kirby-inspired pastel pink (`#FFB7D5`).
 
-Change the pink accent color:
+## Requirements
 
-PINK=$'\033[38;2;255;183;213m'
+- macOS
+- Bash
+- Terminal with ANSI color and Unicode support
 
-Default color: #FFB7D5 (Kirby Pink)
+## Technical Details
 
-Change the ASCII art:
+Built using Bash and native macOS utilities, including `sysctl`, `system_profiler`, `vm_stat`, `sw_vers`, and `df`.
 
-Find the ART section of the script and replace the existing artwork with your preferred Unicode or ASCII design.
+No additional packages are required.
 
-Change the progress bars:
+---
 
-Adjust the width variable inside the progress_bar() function.
-
-How It Works
-
-The script uses built-in macOS command-line utilities to retrieve system information, including:
-
-sw_vers — macOS version
-
-sysctl — CPU, hardware model, and memory
-
-system_profiler — GPU and Apple Silicon information
-
-vm_stat — Memory usage
-
-df — Disk usage
-
-uptime — System uptime
-
-ANSI escape sequences provide the colors and terminal formatting.
-
-Notes
-
-Designed specifically for macOS.
-
-System information varies depending on the Mac.
-
-Terminal appearance may vary depending on font and window size.
-
-Running the script does not modify shell configuration files.
-
-
+Written in Bash | Designed for macOS
